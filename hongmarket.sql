@@ -158,3 +158,6 @@ CREATE TABLE `mall_user` (
 INSERT INTO `mall_user` (`id`, `username`, `password`, `email`, `phone`, `question`, `answer`, `role`, `create_time`, `update_time`)
 VALUES
 	(1,'admin','21232F297A57A5A743894A0E4A801FC3','admin@gmail.com',NULL,NULL,NULL,0,'2000-08-06 15:12:00','2000-08-06 15:12:00');
+
+//Modify payment table
+alter table mall_pay_info add pay_amount decimal(20,2) NOT NULL COMMENT 'payment amount' after platform_status
