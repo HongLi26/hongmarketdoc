@@ -117,6 +117,14 @@ CREATE TABLE `mall_product` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+//insert data into product table
+INSERT INTO `mall_product` (`id`, `category_id`, `name`, `subtitle`, `main_image`, `sub_images`, `detail`, `price`, `stock`, `status`, `create_time`, `update_time`)
+VALUES
+	(26,100002,'HongPhone1','The first best phone','','','',599.00,96,1,'2000-04-12 21:45:41','2000-04-13 21:45:41'),
+	(27,100006,'HongRefrigerator2','The first best Refrigerator','','','',499.00,99,1,'2000-04-13 18:51:54','2000-04-13 21:45:41'),
+	(28,100012,'HongPhone3','The third best phone','','','',799.00,100,1,'2000-04-13 18:57:18','2000-04-13 21:45:41'),
+	(29,100008,'HongWasher4','The fourth best washer','','','',899.00,100,1,'2000-04-13 19:07:47','2000-04-13 21:45:41');
+
 //create receiver's address table
 DROP TABLE IF EXISTS `mall_shipping`;
 CREATE TABLE `mall_shipping` (
