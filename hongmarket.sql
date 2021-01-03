@@ -94,9 +94,12 @@ CREATE TABLE `mall_pay_info` (
   `pay_platform` int(10) DEFAULT NULL COMMENT '1=alipay 2=wechat pay',
   `platform_number` varchar(200) DEFAULT NULL COMMENT 'Alipay paltform number',
   `platform_status` varchar(20) DEFAULT NULL COMMENT 'Alipay status',
-  `create_time` datetime DEFAULT NULL COMMENT 'establishment time',
-  `update_time` datetime DEFAULT NULL COMMENT 'update time',
+  `pay_amount` decimal(20,2) NOT NULL COMMENT 'pay amount',
+  `create_time` datetime DEFAULT CURRENT_TIMESTAMP,
+  `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
+  UNIQUE KEY `uqe_order_no` (`order_no`),
+  UNIQUE KEY `uqe_platform_number` (`platform_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 //create product table
@@ -169,3 +172,8 @@ VALUES
 
 //Modify payment table
 alter table mall_pay_info add pay_amount decimal(20,2) NOT NULL COMMENT 'payment amount' after platform_status
+
+alter table mall_user modify create_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'establishment time';
+alter table mall_user modify update_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT 'last time';
+
+
