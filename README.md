@@ -1,2 +1,2 @@
 # hongmarketdoc
-This repo keeps the documents of HongMarket website
+This repo stores the documents of HongMarket website
